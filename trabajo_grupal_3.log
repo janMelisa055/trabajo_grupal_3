@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.28)  23 MAY 2023 21:52
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.28)  23 MAY 2023 21:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -678,7 +678,7 @@ Missing character: There is no   (U+202F) in font [lmmono12-regular]:!
 Missing character: There is no   (U+202F) in font [lmmono12-regular]:!
 [2] (./trabajo_grupal_3.aux)
 Package rerunfilecheck Info: File `trabajo_grupal_3.out' has not changed.
-(rerunfilecheck)             Checksum: 740C84FC7504C5FC63FF56C88FB1FD9F;642.
+(rerunfilecheck)             Checksum: 37A93D9E0BD4CE1FE7D59CCA7EF57E0F;642.
  ) 
 Here is how much of TeX's memory you used:
  16796 strings out of 478659

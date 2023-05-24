@@ -66,16 +66,16 @@ porcien <- function(x) {
 }
 # Formato para porcentajes en estilo SI francés (coma decimal).
 ```
-# Introducciôn
+# Introducción
 
 # Flujos
 
 ```{r}
 flujo <- rep(75294 * 0.1, 15)
 flujos <- c(-inversion, flujo)
-cat("Los flujos durante 15 años es de",
+cat(paste0("Los flujos durante 15 años es de ",
 dinero_millones(as.numeric(flujo[1])), ".\n",
-"La inversión es de", dinero_millones(inversion))
+"La inversión es de ", dinero_millones(inversion), "."))
 ```
 
 # VP
@@ -84,7 +84,7 @@ dinero_millones(as.numeric(flujo[1])), ".\n",
 i <- 1:15
 VP <- sum(flujo[i] / (1 + r)^i)
 
-cat("El valor presente es de", dinero_millones(VP), ".")
+cat(paste0("El valor presente es de ", dinero_millones(VP), "."))
 ```
 
 # VAN
@@ -92,8 +92,8 @@ cat("El valor presente es de", dinero_millones(VP), ".")
 ```{r}
 VAN <- npv(r, flujos)
 
-cat("El VAN es de", dinero_millones(VAN), ".\n",
-"La viabilidad del proyecto es", VAN > 0, ".")
+cat(paste0("El VAN es de ", dinero_millones(VAN), ".\n",
+"La viabilidad del proyecto es ", VAN > 0, "."))
 ```
 
 # TIR
@@ -101,6 +101,6 @@ cat("El VAN es de", dinero_millones(VAN), ".\n",
 ```{r}
 TIR <- irr(flujos)
 
-cat("La TIR es de", porcien(TIR), ".\n",
-"La viabilidad del proyecto es", TIR > r, ".")
+cat(paste0("La TIR es de ", porcien(TIR), ".\n",
+"La viabilidad del proyecto es ", TIR > r, "."))
 ```
