@@ -41,7 +41,11 @@ knitr::include_graphics("coat_of_arms.png")
 
 
 ```{r}
-
+balance <- read_excel("balance_amzn.xlsx")
+inversion <- as.numeric((0.1 * balance[1, 2]) / 1000)
+r <- read_excel("wacc.xls",
+  range = "A19:L115", sheet = "Industry Averages")
+r <- as.numeric(r[75, 11])
 
 # Datos a utilizar.
 ```
@@ -57,12 +61,46 @@ dinero_millones <- function(x) {
 # coma decimal, y dos puntos decimales.
 
 porcien <- function(x) {
-    paste0(format(round(x, 2), big.mark = "\u202f", scientific = FALSE,
-    decimal.mark = ",") * 100, "%")
+    paste0(format(round(x * 100, 2), scientific = FALSE,
+    decimal.mark = ","), "%")
 }
 # Formato para porcentajes en estilo SI francés (coma decimal).
 ```
 # Introducciôn
 
-# Emisión Bono Bullet
+# Flujos
 
+```{r}
+flujo <- rep(75294 * 0.1, 15)
+flujos <- c(-inversion, flujo)
+cat("Los flujos durante 15 años es de",
+dinero_millones(as.numeric(flujo[1])), ".\n",
+"La inversión es de", dinero_millones(inversion))
+```
+
+# VP
+
+```{r}
+i <- 1:15
+VP <- sum(flujo[i] / (1 + r)^i)
+
+cat("El valor presente es de", dinero_millones(VP), ".")
+```
+
+# VAN
+
+```{r}
+VAN <- npv(r, flujos)
+
+cat("El VAN es de", dinero_millones(VAN), ".\n",
+"La viabilidad del proyecto es", VAN > 0, ".")
+```
+
+# TIR
+
+```{r}
+TIR <- irr(flujos)
+
+cat("La TIR es de", porcien(TIR), ".\n",
+"La viabilidad del proyecto es", TIR > r, ".")
+```
