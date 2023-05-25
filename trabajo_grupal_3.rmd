@@ -53,9 +53,9 @@ r <- as.numeric(r[75, 11])
 ```{r}
 dinero_millones <- function(x) {
     ifelse(round(x, 2) != 0,
-      paste0("$", format(round(x, 2), big.mark = "\u202f", scientific = FALSE,
-    decimal.mark = ","), "M"),
-    "$ -")
+      paste0(format(round(x, 2), big.mark = "\u202f", scientific = FALSE,
+    decimal.mark = ","), " MUSD"),
+    "- MUSD")
 }
 # Formato de dinero en millones para añadir separadores de miles,
 # coma decimal, y dos puntos decimales.
@@ -66,9 +66,17 @@ porcien <- function(x) {
 }
 # Formato para porcentajes en estilo SI francés (coma decimal).
 ```
+
 # Introducción
 
-# Flujos
+En el supuesto de que Amazon tenga la alternativa de invertir
+en un proyecto que requiere una inversión equivalente al 10 % del
+activo contable, el cual genera flujos netos de 10 % del promedio
+del flujo operacional actual de la empresa durante quince años, 
+se obtienen lo siguientes datos para asegurar el mejor resultado para
+la empresa:
+
+## Flujos
 
 ```{r}
 flujo <- rep(75294 * 0.1, 15)
@@ -78,7 +86,7 @@ dinero_millones(as.numeric(flujo[1])), ".\n",
 "La inversión es de ", dinero_millones(inversion), "."))
 ```
 
-# VP
+## VP
 
 ```{r}
 i <- 1:15
@@ -87,7 +95,7 @@ VP <- sum(flujo[i] / (1 + r)^i)
 cat(paste0("El valor presente es de ", dinero_millones(VP), "."))
 ```
 
-# VAN
+## VAN
 
 ```{r}
 VAN <- npv(r, flujos)
@@ -96,7 +104,7 @@ cat(paste0("El VAN es de ", dinero_millones(VAN), ".\n",
 "La viabilidad del proyecto es ", VAN > 0, "."))
 ```
 
-# TIR
+## TIR
 
 ```{r}
 TIR <- irr(flujos)
@@ -104,3 +112,71 @@ TIR <- irr(flujos)
 cat(paste0("La TIR es de ", porcien(TIR), ".\n",
 "La viabilidad del proyecto es ", TIR > r, "."))
 ```
+Considerando los números obtenidos en el cálculo
+del VAN (Valor Actual Neto) y el TIR (Tasa Interna de Retorno),
+el proyecto debería llevarse a cabo.
+
+# Análisis del Proceso de Emisión
+
+Desde el punto de vista de Amazon, independiente del
+resultado obtenido anteriormente en el caso hipotético de que
+sí se concluyó que era conveniente invertir, sí decidimos invertir de
+cualquier manera y para eso se necesitan emitir acciones
+de la empresa Amazon, entonces se llevaría acabó un
+contrato de *underwriting*, el cual consiste básicamente
+en un contrato donde una entidad financiera se encarga
+de pre-financiar la emisión de acciones de la empresa,
+donde estas pasan inmediatamente al mercado de capitales.
+
+La diferencia principal que existe entre Chile y Estados Unidos
+con respecto a la emisión de acciones es que en Chile el
+que se encarga de regular el mercado de valores es el CMF
+(Comisión para el Mercado Financiero) y en Estados Unidos
+es el SEC (Comisión de Bolsa y Valores). El proceso del contrato
+*underwriting* se resume en que cuando la empresa en este
+caso Amazon quiere invertir emitiendo acciones, busca utilizar
+los servicios de una empresa con un conocimiento especial
+en el mercado de valores, esta con el conocimiento que
+posee se dará cuenta de la necesidad de capital y le
+propondrá una propuesta a Amazon sobre cómo, cuándo y a
+qué precio podrá captar el capital deseado, tras esto, la
+institución financiera con la que esté tratando Amazon
+ofrecerá y venderá las acciones en el mercado de capitales
+donde la entidad financiera obtendrá la diferencia entre
+la pre-financiación y lo obtenido con la venta de acciones.
+Al ser Amazon una empresa tan reconocida mundialmente,
+existe una alta probabilidad que una empresa profesional
+en el mercado de valores quiera y pueda asumir el riesgo
+en la colocación de emisión.  Con respecto a los inversionistas
+que buscarían comprar estas acciones, muy probablemente encontremos
+a los inversionistas moderados y a los agresivos, quienes son
+más propensos a invertir en acciones y equivalentes que los
+inversionistas conservadores donde más probablemente inviertan
+en bonos antes que en acciones. Dado que Amazon es una empresa
+de gran reconocimiento y magnitud, es más probable para los
+inversores estar dispuestos a asumir riesgos con tal de
+obtener una mayor rentabilidad y rendimiento. Entre las
+acciones preferentes o las acciones comunes, desde nuestro
+punto de vista posiblemente sea mejor para la empresa
+emitir acciones preferentes, esto debido a que al emitir
+estas acciones los inversores que las compren no obtendrán
+derechos políticos sobre la empresa cuando está
+ya se encuentra intentando hacer un nuevo proyecto por
+lo que no podrán intervenir en este, además estas serían
+rescatables por la empresa después de cinco años. Por ultimo
+al ser una institución financiera quien está vendiendo las
+acciones podrá alcanzar a inversionistas que no son los minoristas.
+
+# Acciones Comunes
+
+```{r}
+# Precio de la acción de Amazon al 2023-05-24: 117.2 USD.
+acciones <- round(inversion / 117.20)
+
+cat("Se deben vender", acciones, "acciones para financiar la inversión.")
+```
+
+Desde el punto de emitir acciones, entonces sí se podría considerar
+un buen momento al tener en cuenta que estas se encuentran aumentando
+su precio a un buen ritmo según el gráfico entregado por la página
+*Yahoo Finance* desde el último año con pocas fluctuaciones negativas considerables.

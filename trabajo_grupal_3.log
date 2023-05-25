@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.28)  23 MAY 2023 21:59
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.4.28)  24 MAY 2023 21:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -676,17 +676,17 @@ Missing character: There is no   (U+202F) in font [lmmono12-regular]:!
 Missing character: There is no   (U+202F) in font [lmmono12-regular]:!
 Missing character: There is no   (U+202F) in font [lmmono12-regular]:!
 Missing character: There is no   (U+202F) in font [lmmono12-regular]:!
-[2] (./trabajo_grupal_3.aux)
+[2] [3] [4] (./trabajo_grupal_3.aux)
 Package rerunfilecheck Info: File `trabajo_grupal_3.out' has not changed.
-(rerunfilecheck)             Checksum: 37A93D9E0BD4CE1FE7D59CCA7EF57E0F;642.
+(rerunfilecheck)             Checksum: E62CF0538F96C3F1E0A642CE02537C69;1026.
  ) 
 Here is how much of TeX's memory you used:
- 16796 strings out of 478659
- 311016 string characters out of 5846592
- 1846698 words of memory out of 5000000
- 36766 multiletter control sequences out of 15000+600000
- 512963 words of font info for 44 fonts, out of 8000000 for 9000
+ 16802 strings out of 478659
+ 311171 string characters out of 5846592
+ 1853698 words of memory out of 5000000
+ 36770 multiletter control sequences out of 15000+600000
+ 512971 words of font info for 45 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 86i,5n,121p,321b,319s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 86i,5n,121p,321b,322s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on trabajo_grupal_3.pdf (2 pages).
+Output written on trabajo_grupal_3.pdf (4 pages).
