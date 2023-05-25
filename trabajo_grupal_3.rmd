@@ -62,7 +62,7 @@ dinero_millones <- function(x) {
 
 porcien <- function(x) {
     paste0(format(round(x * 100, 2), scientific = FALSE,
-    decimal.mark = ","), "%")
+    decimal.mark = ","), " %")
 }
 # Formato para porcentajes en estilo SI francés (coma decimal).
 ```
@@ -177,7 +177,7 @@ cat("Se deben vender", acciones, "acciones para financiar la inversión.")
 ```
 
 La cantidad de acciones comunes que se debiesen emitir son 395,
-teniendo en cuenta el precio corriente de 117,20 MUSD según
+teniendo en cuenta el precio corriente de 117,20 USD según
 *Yahoo Finance*. Con respecto a si conviene invertir,
 considerando el alza que están teniendo las acciones de
 Amazon y las pocas fluctuaciones negativas en el ultimo
