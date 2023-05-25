@@ -176,7 +176,9 @@ acciones <- round(inversion / 117.20)
 cat("Se deben vender", acciones, "acciones para financiar la inversión.")
 ```
 
-Desde el punto de emitir acciones, entonces sí se podría considerar
-un buen momento al tener en cuenta que estas se encuentran aumentando
-su precio a un buen ritmo según el gráfico entregado por la página
-*Yahoo Finance* desde el último año con pocas fluctuaciones negativas considerables.
+La cantidad de acciones comunes que se debiesen emitir son 395,
+teniendo en cuenta el precio corriente de 117,20 MUSD según
+*Yahoo Finance*. Con respecto a si conviene invertir,
+considerando el alza que están teniendo las acciones de
+Amazon y las pocas fluctuaciones negativas en el ultimo
+tiempo, se estima que es un buen momento para emitir acciones.
